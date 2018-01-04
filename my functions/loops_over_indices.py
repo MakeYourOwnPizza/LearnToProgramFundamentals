@@ -1,3 +1,37 @@
-Python 3.4.3 (v3.4.3:9b73f1c3e601, Feb 24 2015, 22:44:40) [MSC v.1600 64 bit (AMD64)] on win32
-Type "copyright", "credits" or "license()" for more information.
->>> 
+def shift_left(L):
+    ''' (list) -> NoneType (the function modifies the list, so it's NoneType)
+
+    Shift each item in L one position to the left
+    and shift the first item to the last position.
+
+    Precondition: len(L) >= 1
+
+    >>> sev = [7]
+    >>> shift_left(sev)
+    >>> sev
+    [7]
+    '''
+
+    first_item = L[0]
+
+    for i in range(1, len(L)):
+        L[i - 1] = L[i]
+        
+    L[-1] = first_item
+    
+def count_adjacent_repeats(s):
+    '''(str) -> int
+
+    Return the number of occurrences of a chracter and
+    an adjacent character being the same.
+    
+    >>>count_adjacent_repeats('abccdeffggh')
+    3
+    '''
+
+    repeats = 0
+
+    for i in range(len(s)-1):
+        if s[i] == s[i+1]:
+            repeats = repeats + 1
+    return repeats
