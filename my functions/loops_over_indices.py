@@ -18,6 +18,7 @@ def shift_left(L):
         L[i - 1] = L[i]
         
     L[-1] = first_item
+    return L
     
 def count_adjacent_repeats(s):
     '''(str) -> int
